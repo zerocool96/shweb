@@ -949,6 +949,27 @@
                   grid-template-columns:repeat(8,minmax(0,1fr))
               }
           }
+    .category-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .category-link {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: #eee;
+        transition: background-color 0.3s ease;
+    }
+
+    .category-link:hover {
+        background-color: #ddd;
+    }		  	  
       </style>
 
   </head>
@@ -964,6 +985,19 @@
               <div class="flex flex-row mb-3 ml-1 gap-3 justify-center align-middle" style="margin: 25px;">
                   <input type="search" id="searchInput" class="relative w-[100%] col-span-4 block mx-4 rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-600 dark:placeholder:text-neutral-700" placeholder="Search">
               </div>
+			  <div class="category-links">
+					<a href="#" onclick="filterContent('All')" class="category-link">All</a>
+					<a href="#" onclick="filterContent('Music')" class="category-link">Music</a>
+					<a href="#" onclick="filterContent(['Tamil News','Malayalam News','English News'])" class="category-link">News</a>
+					<a href="#" onclick="filterContent('Sports')" class="category-link">Sports</a>
+					<a href="#" onclick="filterContent('Kids')" class="category-link">Kids</a>
+					<a href="#" onclick="filterContent('English Movies')" class="category-link">Movies</a>
+					<a href="#" onclick="filterContent('Wild Discoveries')" class="category-link">Discovery</a>
+
+					<!-- Add more links for other categories as needed -->
+			</div>
+			<br>
+			  
               <div id="listContainer" class="container grid place-items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 mx-auto">
 			                    <div class="box1">
                       <a href="https://rogstream.fun/hls/tata/play.php?id=521" data-sveltekit-preload-data="hover">
@@ -978,19 +1012,7 @@
                           </div>
                       </a>
                   </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=474" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11837-j9kzms9s-v2/imageContent-11837-j9kzms9s-m3.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Sun Life</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
+
                   <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=496" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
@@ -1031,19 +1053,6 @@
                       </a>
                   </div>
                   <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=708" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-38738-juc4a1ig-v5/imageContent-38738-juc4a1ig-m8.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Jaya TV HD</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Telugu</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=674" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
                               <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-33814-jo5jba9s-v3/imageContent-33814-jo5jba9s-m3.PNG" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
@@ -1055,7 +1064,33 @@
                               </div>
                           </div>
                       </a>
-                  </div>
+                  </div>				  
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=418" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-21152-je6orzfk-v1/imageContent-21152-je6orzfk-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Colors Tamil</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>				  
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=474" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11837-j9kzms9s-v2/imageContent-11837-j9kzms9s-m3.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Sun Life</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>				  
                   <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=200" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
@@ -1070,11 +1105,50 @@
                       </a>
                   </div>
                   <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=418" data-sveltekit-preload-data="hover">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=708" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-21152-je6orzfk-v1/imageContent-21152-je6orzfk-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-38738-juc4a1ig-v5/imageContent-38738-juc4a1ig-m8.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
                               <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Colors Tamil</h2>
+                                  <h2 class="text-center text-sm font-bold">Jaya TV HD</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>				  
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=380" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11536-j9jty5w8-v1/imageContent-11536-j9jty5w8-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">KTV HD</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=201" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-816-j5m8dqd4-v1/imageContent-816-j5m8dqd4-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">J Movies</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=797" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-49016-k5lx1za0-v2/imageContent-49016-k5lx1za0-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Zee Thirai</h2>
                                   <div class="flex justify-center space-x-1">
                                       <p class="text-xs text-center">Tamil</p>
                                   </div>
@@ -1102,7 +1176,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">D Tamil</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
+                                      <p class="text-xs text-center">Wild Discoveries</p>
                                   </div>
                               </div>
                           </div>
@@ -1212,45 +1286,7 @@
                           </div>
                       </a>
                   </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=380" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11536-j9jty5w8-v1/imageContent-11536-j9jty5w8-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">KTV HD</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=201" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-816-j5m8dqd4-v1/imageContent-816-j5m8dqd4-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">J Movies</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=797" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-49016-k5lx1za0-v2/imageContent-49016-k5lx1za0-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Zee Thirai</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
+
                   <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=444" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
@@ -1271,7 +1307,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Puthiya Thalaimurai</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
+                                      <p class="text-xs text-center">Tamil News</p>
                                   </div>
                               </div>
                           </div>
@@ -1284,7 +1320,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Thanthi TV</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
+                                      <p class="text-xs text-center">Tamil News</p>
                                   </div>
                               </div>
                           </div>
@@ -1296,123 +1332,6 @@
                               <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-810-j5m84h14-v1/imageContent-810-j5m84h14-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Jaya Plus</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=21" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-66-j5ff8qio-v1/imageContent-66-j5ff8qio-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">News 7 Tamil</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=509" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11942-j9lthi34-v1/imageContent-11942-j9lthi34-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Polimer News</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=58" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-192-j5fsr3s0-v1/imageContent-192-j5fsr3s0-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">News18 Tamil Nadu</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=44" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-126-j5fnf4ig-v2/imageContent-126-j5fnf4ig-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Seithigal TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=525" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-12002-j9nrtf08-v2/imageContent-12002-j9nrtf08-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Raj News Tamil</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=455" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11764-j9kwqj6o-v1/imageContent-11764-j9kwqj6o-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Sathiyam TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=391" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/MAMUR_Thumbnail-v2/MAMUR_Thumbnail.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">MalaiMurasu Seithigal</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=702" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-37207-jswmhmpk-v1/imageContent-37207-jswmhmpk-m1.PNG" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">News J</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=968" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-69018-kzo65wi0-v1/imageContent-69018-kzo65wi0-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">News Tamil 24x7</h2>
                                   <div class="flex justify-center space-x-1">
                                       <p class="text-xs text-center">Tamil</p>
                                   </div>
@@ -1434,13 +1353,144 @@
                       </a>
                   </div>
                   <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=411" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11616-j9k04eo0-v1/imageContent-11616-j9k04eo0-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Murasu TV</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>				  
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=21" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-66-j5ff8qio-v1/imageContent-66-j5ff8qio-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">News 7 Tamil</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=509" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11942-j9lthi34-v1/imageContent-11942-j9lthi34-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Polimer News</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=58" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-192-j5fsr3s0-v1/imageContent-192-j5fsr3s0-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">News18 Tamil Nadu</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=44" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-126-j5fnf4ig-v2/imageContent-126-j5fnf4ig-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Seithigal TV</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=525" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-12002-j9nrtf08-v2/imageContent-12002-j9nrtf08-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Raj News Tamil</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=455" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11764-j9kwqj6o-v1/imageContent-11764-j9kwqj6o-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Sathiyam TV</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=391" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/MAMUR_Thumbnail-v2/MAMUR_Thumbnail.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">MalaiMurasu Seithigal</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=702" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-37207-jswmhmpk-v1/imageContent-37207-jswmhmpk-m1.PNG" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">News J</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=968" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-69018-kzo65wi0-v1/imageContent-69018-kzo65wi0-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">News Tamil 24x7</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Tamil News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+
+                  <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=199" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
                               <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-807-j5m7zoyo-v1/imageContent-807-j5m7zoyo-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Jaya Max</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
+                                      <p class="text-xs text-center">Music</p>
                                   </div>
                               </div>
                           </div>
@@ -1453,7 +1503,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Raj Musix</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
+                                      <p class="text-xs text-center">Music</p>
                                   </div>
                               </div>
                           </div>
@@ -1466,46 +1516,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Isaiaruvi</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=411" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11616-j9k04eo0-v1/imageContent-11616-j9k04eo0-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Murasu TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=400" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11583-j9jype8w-v3/imageContent-11583-j9jype8w-m3.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Mega Musiq</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=434" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11712-j9kt9fbs-v2/imageContent-11712-j9kt9fbs-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Jothi TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Tamil</p>
+                                      <p class="text-xs text-center">Music</p>
                                   </div>
                               </div>
                           </div>
@@ -1513,18 +1524,19 @@
                   </div>
 
                   <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=372" data-sveltekit-preload-data="hover">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=400" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-12323-jaa5pzxs-v1/imageContent-12323-jaa5pzxs-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11583-j9jype8w-v3/imageContent-11583-j9jype8w-m3.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
                               <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Jeevan TV</h2>
+                                  <h2 class="text-center text-sm font-bold">Mega Musiq</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
+                                      <p class="text-xs text-center">Music</p>
                                   </div>
                               </div>
                           </div>
                       </a>
                   </div>
+
                   <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=230" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
@@ -1694,19 +1706,7 @@
                           </div>
                       </a>
                   </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=436" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11709-j9kt6bg0-v1/imageContent-11709-j9kt6bg0-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Safari TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Wild Discoveries</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
+
                   <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=532" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
@@ -1714,7 +1714,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Asianet News</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
+                                      <p class="text-xs text-center">Malayalam News</p>
                                   </div>
                               </div>
                           </div>
@@ -1727,7 +1727,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Kairali News</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
+                                      <p class="text-xs text-center">Malayalam News</p>
                                   </div>
                               </div>
                           </div>
@@ -1740,7 +1740,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Manorama News</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
+                                      <p class="text-xs text-center">Malayalam News</p>
                                   </div>
                               </div>
                           </div>
@@ -1753,7 +1753,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Mathrubhumi News</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
+                                      <p class="text-xs text-center">Malayalam News</p>
                                   </div>
                               </div>
                           </div>
@@ -1766,7 +1766,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">News18 Kerala</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
+                                      <p class="text-xs text-center">Malayalam News</p>
                                   </div>
                               </div>
                           </div>
@@ -1779,7 +1779,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Jaihind TV</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
+                                      <p class="text-xs text-center">Malayalam News</p>
                                   </div>
                               </div>
                           </div>
@@ -1792,7 +1792,59 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Media One</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
+                                      <p class="text-xs text-center">Malayalam News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=428" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11694-j9kjc0tc-v1/imageContent-11694-j9kjc0tc-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Raj News Malayalam</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Malayalam News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=270" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11179-j9i3nhs8-v2/imageContent-11179-j9i3nhs8-m3.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Janam TV</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Malayalam News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=799" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-49022-k5lxarmw-v2/imageContent-49022-k5lxarmw-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Twenty Four</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Malayalam News</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="box1">
+                      <a  href="https://rogstream.fun/hls/tata/play.php?id=541" data-sveltekit-preload-data="hover">
+                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
+                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11688-j9kiz1zs-v1/imageContent-11688-j9kiz1zs-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+                              <div class="mb-5 opacity-100">
+                                  <h2 class="text-center text-sm font-bold">Raj Musix Malayalam</h2>
+                                  <div class="flex justify-center space-x-1">
+                                      <p class="text-xs text-center">Music</p>
                                   </div>
                               </div>
                           </div>
@@ -1810,59 +1862,8 @@
                               </div>
                           </div>
                       </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=428" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11694-j9kjc0tc-v1/imageContent-11694-j9kjc0tc-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Raj News Malayalam</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=270" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11179-j9i3nhs8-v2/imageContent-11179-j9i3nhs8-m3.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Janam TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=799" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-49022-k5lxarmw-v2/imageContent-49022-k5lxarmw-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Twenty Four</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=541" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11688-j9kiz1zs-v1/imageContent-11688-j9kiz1zs-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Raj Musix Malayalam</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
+                  </div>				  
+				  
                   <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=377" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
@@ -1876,214 +1877,7 @@
                           </div>
                       </a>
                   </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=269" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11176-j9i3lv54-v2/imageContent-11176-j9i3lv54-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Goodness</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=356" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11449-j9jqxsns-v1/imageContent-11449-j9jqxsns-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">God TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=457" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11772-j9kwsqns-v1/imageContent-11772-j9kwsqns-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Shalom TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=348" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-35638-jruyxl0g-v4/imageContent-35638-jruyxl0g-m7.PNG" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Harvest TV 24x7</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Malayalam</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=132" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-441-j5jt3mmg-v3/imageContent-441-j5jt3mmg-m3.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">SONY MAX</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=503" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11915-j9l5clzs-v1/imageContent-11915-j9l5clzs-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Zee Cinema HD</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=123" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11027-j8yjr8k0-v1/imageContent-11027-j8yjr8k0-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Zee Cinema</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=727" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-42199-jxh2zlj4-v1/imageContent-42199-jxh2zlj4-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Zee Classic</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=666" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-31419-jmb48u74-v3/imageContent-31419-jmb48u74-m4.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play Theatre HD</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=267" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11173-j9hth720-v1/imageContent-11173-j9hth720-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">&amp;pictures HD</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=148" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-499-j5jydp7s-v1/imageContent-499-j5jydp7s-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">&amp;pictures</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=677" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-34170-jok0hf00-v7/imageContent-34170-jok0hf00-m8.PNG" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play ShortsTV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=61" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-183-j5fsqz5c-v2/imageContent-183-j5fsqz5c-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Colors Cineplex HD</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=53" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-149-j5frd0jc-v2/imageContent-149-j5frd0jc-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Colors Cineplex</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=730" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-43104-jxzls8yw-v2/imageContent-43104-jxzls8yw-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">B4U Kadak</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=100" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11024-j8yix4g8-v1/imageContent-11024-j8yix4g8-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Zee Action</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
+
                   <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=173" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
@@ -2091,7 +1885,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Movies Now</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
+                                      <p class="text-xs text-center">English Movies</p>
                                   </div>
                               </div>
                           </div>
@@ -2104,7 +1898,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Movies Now HD</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
+                                      <p class="text-xs text-center">English Movies</p>
                                   </div>
                               </div>
                           </div>
@@ -2117,7 +1911,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">MN+ HD</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
+                                      <p class="text-xs text-center">English Movies</p>
                                   </div>
                               </div>
                           </div>
@@ -2130,7 +1924,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">MNX HD</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
+                                      <p class="text-xs text-center">English Movies</p>
                                   </div>
                               </div>
                           </div>
@@ -2143,7 +1937,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Romedy Now</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Movies</p>
+                                      <p class="text-xs text-center">English Movies</p>
                                   </div>
                               </div>
                           </div>
@@ -2307,19 +2101,6 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Sports 18 - 1 HD</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">null</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=980" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-70046-l21cybww-v2/imageContent-70046-l21cybww-m5.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Sports 18 - 1</h2>
-                                  <div class="flex justify-center space-x-1">
                                       <p class="text-xs text-center">Sports</p>
                                   </div>
                               </div>
@@ -2353,183 +2134,13 @@
                       </a>
                   </div>
                   <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=815" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-52856-k984c4vc-v1/imageContent-52856-k984c4vc-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">1sports</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Sports</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=691" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-34886-jqc7dybs-v2/imageContent-34886-jqc7dybs-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">DD News HD</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=322" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11333-j9joxlw8-v2/imageContent-11333-j9joxlw8-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">DD News</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=177" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-759-j5m13014-v2/imageContent-759-j5m13014-m3.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">ABP News</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=783" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-47647-k2lbp2q8-v2/imageContent-47647-k2lbp2q8-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play Seniors</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Wild Discoveries</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=179" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-483-j5jx9x48-v1/imageContent-483-j5jx9x48-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">NDTV India</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=689" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-34652-jpmey8gw-v1/imageContent-34652-jpmey8gw-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Aaj Tak HD</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=153" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-537-j5kwkd88-v1/imageContent-537-j5kwkd88-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Aaj Tak</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=1056" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/HAGHAR_Thumbnail-v1/HAGHAR_Thumbnail.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play Har Ghar Startup</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">null</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=259" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-11110-j95ioyag-v1/imageContent-11110-j95ioyag-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Zee News</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=872" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-58613-kj283ly8-v2/imageContent-58613-kj283ly8-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play Astro Duniya</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Spiritual</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=104" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-8568-j7lnde80-v1/imageContent-8568-j7lnde80-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">India TV</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=209" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-849-j5m9tmf4-v1/imageContent-849-j5m9tmf4-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">News 24</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-
-                  <div class="box1">
                       <a  href="https://rogstream.fun/hls/tata/play.php?id=208" data-sveltekit-preload-data="hover">
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
                               <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-834-j5m9nrrs-v1/imageContent-834-j5m9nrrs-m1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">NDTV 24x7</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2542,7 +2153,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Times Now World</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2555,7 +2166,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">TIMES NOW</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2568,7 +2179,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">INDIA TODAY</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2581,7 +2192,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">CNN News18</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2595,7 +2206,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">REPUBLIC TV</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2608,7 +2219,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">CNBC TV18 Prime HD</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2621,7 +2232,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">DD India</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2634,7 +2245,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">NDTV Profit Prime</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2647,7 +2258,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">CNBC-TV18</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2660,7 +2271,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">ET NOW</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2673,7 +2284,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">CNN</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2686,7 +2297,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">BBC News</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2699,7 +2310,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Al Jazeera</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2712,7 +2323,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Channel News Asia</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2725,7 +2336,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">France 24</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2765,20 +2376,7 @@
                               <div class="mb-5 opacity-100">
                                   <h2 class="text-center text-sm font-bold">Australia TV</h2>
                                   <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">News</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=71" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-25721-jia4i70o-v2/imageContent-25721-jia4i70o-m3.PNG" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play English in Hindi</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Wild Discoveries</p>
+                                      <p class="text-xs text-center">English News</p>
                                   </div>
                               </div>
                           </div>
@@ -2815,7 +2413,7 @@
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
                               <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-13094-jbdzlsfs-v2/imageContent-13094-jbdzlsfs-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
                               <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play Fun Learn Preschool</h2>
+                                  <h2 class="text-center text-sm font-bold">Fun Learn Preschool</h2>
                                   <div class="flex justify-center space-x-1">
                                       <p class="text-xs text-center">Kids</p>
                                   </div>
@@ -2828,7 +2426,7 @@
                           <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
                               <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-13097-jbdzn9og-v2/imageContent-13097-jbdzn9og-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
                               <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play Fun Learn Junior</h2>
+                                  <h2 class="text-center text-sm font-bold">Fun Learn Junior</h2>
                                   <div class="flex justify-center space-x-1">
                                       <p class="text-xs text-center">Kids</p>
                                   </div>
@@ -2961,32 +2559,6 @@
                                   <h2 class="text-center text-sm font-bold">CBeeBies</h2>
                                   <div class="flex justify-center space-x-1">
                                       <p class="text-xs text-center">Kids</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=111" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-352-j5jmrkqw-v2/imageContent-352-j5jmrkqw-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play Smart Manager</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Wild Discoveries</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </a>
-                  </div>
-                  <div class="box1">
-                      <a  href="https://rogstream.fun/hls/tata/play.php?id=167" data-sveltekit-preload-data="hover">
-                          <div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col">
-                              <img src="https://ltsk-cdn.s3.eu-west-1.amazonaws.com/jumpstart/Temp_Live/cdn/HLS/Channel/imageContent-703-j5l1wgco-v2/imageContent-703-j5l1wgco-m2.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
-                              <div class="mb-5 opacity-100">
-                                  <h2 class="text-center text-sm font-bold">Tata Play Vedic Maths</h2>
-                                  <div class="flex justify-center space-x-1">
-                                      <p class="text-xs text-center">Wild Discoveries</p>
                                   </div>
                               </div>
                           </div>
@@ -3167,6 +2739,25 @@
       <div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;"></div>
       <script type="text/javascript" src="channel.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function filterContent(categories) {
+        var paragraphs = document.querySelectorAll('.box1 p.text-xs.text-center');
+        
+        for (var i = 0; i < paragraphs.length; i++) {
+            var paragraph = paragraphs[i];
+            var card = paragraph.closest('.box1');
+            var category = paragraph.textContent.trim();
+
+            if (categories.includes(category) || categories.includes('All')) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        }
+    }
+</script>
+
+
       <script>
           // Get search input element
 
